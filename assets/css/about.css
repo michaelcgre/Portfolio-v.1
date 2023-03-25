@@ -1,0 +1,264 @@
+:root {
+    --clr-primary-200: hsl(166, 12%, 36%);
+    --clr-primary-500: hsl(166, 18%, 23%);
+    --clr-primary-800: hsl(167, 26%, 17%);
+    --clr-secondary-300: hsl(273, 18%, 55%);
+    --clr-secondary-600: hsl(272, 17%, 44%);
+    --clr-secondary-900: hsl(273, 32%, 27%);
+  
+    --clr-neutral-0: hsl(0, 0%, 100%);
+    --clr-neutral-100: hsl(21, 67%, 94%);
+    --clr-neutral-400: hsl(0, 0%, 20%);
+    --clr-neutral-1000: hsl(0, 0%, 0%);
+  
+    --ff-normal: "Source Sans Pro";
+    --ff-special: "Oswald";
+  
+    --fw-regular: 400;
+    --fw-bold: 500;
+    --fw-bolder: 700;
+  }
+  
+  /* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+  
+body {
+  background-color: var(--clr-neutral-100);
+  font-family: var(--ff-normal);
+  color: var(--clr-neutral-400);
+}
+  
+/* HEADER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  font-family: var(--ff-special);
+}
+  
+.logo {
+  z-index: 10;
+}
+  
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+  list-style: none;
+}
+  
+.nav-menu a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--clr-neutral-400);
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+  
+.nav-menu a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  color: var(--clr-secondary-600);
+}
+  
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+  
+.bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--clr-neutral-400);
+}
+  
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--clr-neutral-100);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  .nav-item {
+    margin: 16px 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+   }
+  
+}
+
+/* MAIN */
+
+.about__container {
+  margin: 1rem;
+}
+
+.title h1 {
+  font-family: var(--ff-special);
+  font-size: 3rem;
+  color: var(--clr-primary-500);
+}
+
+.title p {
+  margin: 1rem 1rem;
+  font-size: 1rem;
+  text-indent: 1rem;
+  letter-spacing: 0.05rem;
+  max-width: 155ch;
+}
+
+.skills__container {
+  margin-bottom: 1rem;
+}
+
+.skills__container h2 {
+  color: var(--clr-primary-500);
+}
+
+.hobbies__container h2 {
+  color: var(--clr-primary-500);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  list-style: none;
+  max-width: 350px;
+}
+
+.list li {
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  margin: .5rem 0;
+}
+
+.list li::before {
+  content: "\2022";
+  color: var(--clr-secondary-900);
+  font-weight: 900;
+  display: inline-block;
+  width: 0.6rem;
+  margin-left: -1rem;
+}
+
+picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait {
+  margin-top: 2rem;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .desktop-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .list__container {
+    display: grid;
+    gap: 4rem;
+    margin-right: 2rem;
+  }
+
+  .title h1 {
+    font-size: 4rem;
+  }
+
+  .title p {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+  }
+
+  .list li {
+    font-size: 1.2rem;
+  }
+
+  .skills__container h2 {
+    font-size: 2.5rem;
+  }
+
+  .hobbies__container h2{
+    font-size: 1.5rem;
+  }
+
+  .list {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1080px) {
+  .skills {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
