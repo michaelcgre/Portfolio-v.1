@@ -18,6 +18,10 @@
     --fw-bold: 500;
     --fw-bolder: 700;
   }
+  .dark-theme {
+    --clr-neutral-100: hsl(0, 0%, 20%);
+    --clr-neutral-400: hsl(21, 67%, 94%);
+  }
   
   /* Reset */
 *, *::before, *::after {
@@ -85,9 +89,12 @@ body {
 }
   
 .nav-menu a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
   color: var(--clr-secondary-600);
+}
+
+.fa-moon {
+  cursor: pointer;
+  margin-top: .35rem;
 }
   
 .hamburger {
